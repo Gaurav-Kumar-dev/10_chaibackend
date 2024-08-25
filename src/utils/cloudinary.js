@@ -1,15 +1,16 @@
 import { v2 as cloudinary } from 'cloudinary';
 import fs from 'fs';
 
- // Configuration
- cloudinary.config({ 
-    cloud_name: COLUDINARY_CLOUD_NAME, 
-    api_key: COLUDINARY_API_KEY, 
-    api_secret: COLUDINARY_API_SECRET
+ 
+// Configuration
+cloudinary.config({ 
+    cloud_name: process.env.COLUDINARY_CLOUD_NAME, 
+    api_key: process.env.CLOUDINARY_API_KEY, 
+    api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
 
-const uploadOnCloudinary = await (localFilePath) => {
+const uploadOnCloudinary = async (localFilePath) => {
     try {
         if(!localFilePath) return null
         // Upload an image
