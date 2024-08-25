@@ -3,7 +3,7 @@ import connectDB from "./db/index.js";  // Import database connection function
 import app from "./app.js";             // Import Express app
 
 // Load environment variables from the .env file
-dotenv.config({ path: "./env" });
+dotenv.config({ path: "./.env" });
 
 // Connect to the database first
 connectDB()
